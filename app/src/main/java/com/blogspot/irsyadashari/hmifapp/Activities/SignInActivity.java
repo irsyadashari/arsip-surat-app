@@ -17,6 +17,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -26,7 +29,9 @@ public class SignInActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    private FirebaseDatabase mDatabase;
     private FirebaseUser mUser;
+    private DatabaseReference mDatabaseReference;
 
     private ProgressDialog mProgressDialog;
 
@@ -39,6 +44,7 @@ public class SignInActivity extends AppCompatActivity {
         passwordUserEditText = findViewById(R.id.passUserEditText);
         loginBtn = findViewById(R.id.loginBtn);
         mProgressDialog = new ProgressDialog(this);
+
 
         //Firebase Auth Init
         mAuth = FirebaseAuth.getInstance();

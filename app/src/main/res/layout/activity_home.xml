@@ -13,6 +13,24 @@
         android:gravity="center_vertical|center_horizontal"
         android:orientation="vertical">
 
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/userProfilePic"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@mipmap/default_image"
+            app:civ_border_width="1dp"
+            app:civ_border_color="#727272"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/greetUserText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text=""
+            android:layout_marginBottom="40dp"/>
+
         <Button
             android:id="@+id/inputArsipBtn"
             android:layout_marginBottom="40dp"
@@ -23,7 +41,8 @@
             android:textColor="@color/grey_text"
             android:fontFamily="@Fonts/Calibri.ttf"
             tools:ignore="HardcodedText"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false"
+            android:layout_marginTop="15dp"/>
 
         <Button
             android:id="@+id/lihatArsipBtn"
@@ -37,10 +56,15 @@
 
         <Button
             android:id="@+id/signOutBtn"
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/button_bg"
+            android:fontFamily="@fonts/calibri.ttf"
             android:text="Sign Out"
+            android:textAllCaps="false"
+            android:textColor="@color/grey_text"
             android:layout_marginTop="40dp"/>
+
     </LinearLayout>
 
 </RelativeLayout>

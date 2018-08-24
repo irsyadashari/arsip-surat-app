@@ -16,6 +16,8 @@ import com.blogspot.irsyadashari.hmifapp.R;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -25,6 +27,8 @@ import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
 public class SignUpActivity extends AppCompatActivity {
+
+    String displayNameUserInput;
 
     private ImageButton profilepic;
     private EditText emailEditText;
@@ -37,6 +41,7 @@ public class SignUpActivity extends AppCompatActivity {
     private FirebaseDatabase mDatabase;
     private StorageReference mFirebaseStorage;
     private FirebaseAuth mAuth;
+    private FirebaseUser mUser;
     private ProgressDialog mProgressDialog;
     private Uri resultUri = null;
     private final static int GALLERY_CODE = 1;
@@ -50,6 +55,7 @@ public class SignUpActivity extends AppCompatActivity {
         mDatabaseReference = mDatabase.getReference().child("MUsers");
 
         mAuth = FirebaseAuth.getInstance();
+        mUser = mAuth.getCurrentUser();
 
         mFirebaseStorage = FirebaseStorage.getInstance().getReference().child("MArsip_Profile_Pics");
 
@@ -95,7 +101,7 @@ public class SignUpActivity extends AppCompatActivity {
         final String unameUserInput = emailEditText.getText().toString().trim();
         String passwordUserInput = passwordEditText.getText().toString().trim();
         String conPasswordUserInput = confirmPasswordEditText.getText().toString().trim();
-        final String displayNameUserInput = displaytNameEditText.getText().toString().trim();
+        displayNameUserInput = displaytNameEditText.getText().toString().trim();
 
         if(!TextUtils.isEmpty(unameUserInput) && !TextUtils.isEmpty(passwordUserInput)
                 && !TextUtils.isEmpty(conPasswordUserInput) && !TextUtils.isEmpty(displayNameUserInput))
@@ -121,10 +127,11 @@ public class SignUpActivity extends AppCompatActivity {
                                             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                                                 String userid = mAuth.getCurrentUser().getUid();
 
-                                                //adding all the user bio (in this case, only displayname)
+                                                //adding all the user bio (in this case, only displayname and profile pic)
                                                 DatabaseReference currentUserDb = mDatabaseReference.child(userid);
                                                 currentUserDb.child("displayName").setValue(displayNameUserInput);
-                                                currentUserDb.child("image").setValue(resultUri.toString());
+                                                currentUserDb.child("Image").setValue(resultUri.toString());
+
 
                                                 mProgressDialog.dismiss();
                                                 Toast.makeText(SignUpActivity.this,"Sign Up successful",Toast.LENGTH_SHORT).show();
