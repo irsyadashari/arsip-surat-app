@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">HMIFApp</string>
+    <string name="test">test</string>
+    <string name="cari">CARI</string>
+    <string name="create_act">CREATE ACCOUNT</string>
+    <string name="display_name">Display Name</string>
+
+    <string-array name="jenis_surat">
+        <item>jenis surat 1</item>
+        <item>jenis surat 2</item>
+        <item>jenis surat 3</item>
+        <item>jenis surat 4</item>
+        <item>jenis surat 5</item>
+
+    </string-array>
+
+    <string-array name="jenis_surat_search">
+        <item>Semua</item>
+        <item>jenis surat 1</item>
+        <item>jenis surat 2</item>
+        <item>jenis surat 3</item>
+        <item>jenis surat 4</item>
+        <item>jenis surat 5</item>
+
+    </string-array>
+
+</resources>

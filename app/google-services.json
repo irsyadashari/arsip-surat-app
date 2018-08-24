@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "99633294830",
+    "firebase_url": "https://arsip-surat-himpunan.firebaseio.com",
+    "project_id": "arsip-surat-himpunan",
+    "storage_bucket": "arsip-surat-himpunan.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:99633294830:android:633784fac68b3ae4",
+        "android_client_info": {
+          "package_name": "com.blogspot.irsyadashari.hmifapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "99633294830-m0hos3lfie1l2jbl66nrd5opt7mdl17t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.blogspot.irsyadashari.hmifapp",
+            "certificate_hash": "fefd9f64e6bbb1f61f853af919b7573ec7b28067"
+          }
+        },
+        {
+          "client_id": "99633294830-isqi9ka9gbrvgucdpovgpogq8d4jfama.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCoesTv_wC8Ez7Ax085cHx7U1aaxiUCnA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "99633294830-isqi9ka9gbrvgucdpovgpogq8d4jfama.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
